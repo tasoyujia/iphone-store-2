@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SONY Xperia 1 IV</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <style>
+      .navbar a {
+        text-decoration: none;
+      }
+
+      .text-right a {
+        text-decoration: none;
+      }
+
+      .container {
+        max-width: 100% !important;
+      }
+      .col-md-4 button {
+        display: block; /* Make the button a block element */
+        margin: 0 auto; /* Center the button horizontally */
+        padding: 15px 30px; /* Adjust padding as desired */
+        background-color: #007bff; /* Button color */
+        color: #fff; /* Text color */
+        border: none; /* Remove default border */
+        border-radius: 5px; /* Add rounded corners */
+        cursor: pointer; /* Indicate clickable area */
+        transition: background-color 0.3s ease; /* Add hover effect */
+        margin-top: 30px;
+      }
+
+      .col-md-4 button:hover {
+        background-color: #0056b3; /* Change background color on hover */
+      }
+      footer {
+        color: white;
+        text-align: right;
+      }
+
+      .img-fluid img {
+        width: 500px;
+        margin-bottom: 30px;
+      }
+
+      .product-info table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .product-info th,
+      .product-info td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      .product-info th {
+        background-color: #f0f0f0;
+      }
+
+      .user-reviews {
+        margin-top: 20px;
+      }
+
+      .user-reviews h3 {
+        margin-bottom: 15px;
+      }
+
+      .user-reviews .review {
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-bottom: 15px;
+      }
+
+      .user-reviews .review-author {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .user-reviews .review-content {
+        margin-bottom: 0;
+      }
+
+      .search-bar {
+        margin-top: 20px;
+      }
+
+      .search-bar input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+
+      .search-bar button {
+        padding: 10px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+      }
+
+      .social-media {
+        margin-top: 20px;
+      }
+
+      .social-media a {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      .social-media i {
+        font-size: 24px;
+        color: #333;
+      }
+
+      .cart-button {
+        margin-top: 20px;
+        display: block;
+        width: 100%;
+        padding: 15px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+      }
+      .col-6.productlist {
+        display: flex; /* Set the container to display as a flexbox */
+        flex-direction: column; /* Set the flex items to arrange vertically */
+        align-items: center; /* Center the flex items horizontally */
+      }
+
+      .col-6.productlist figure {
+        margin: 10px 0; /* Add vertical spacing between figures */
+        margin-bottom: 60px;
+      }
+
+      .col-6.productlist figure img {
+        display: block; /* Make each image a block element */
+        margin: 0 auto; /* Center each image horizontally within its figure */
+        width: 60%;
+        margin-bottom: 20px;
+      }
+      /* 搜尋 */
+      .search-container {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+      }
+
+      .search-box {
+        width: 100%;
+      }
+
+      .search-input {
+        width: 100%;
+        padding: 8px;
+        font-size: 16px;
+      }
+
+      .search-btn {
+        width: 100%;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-light">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-2">
+            <img src="img/圖標.jpg" alt="圖標" width="50" />
+          </div>
+          <div class="col-8 text-center">
+            <ul class="list-inline navbar">
+              <li class="list-inline-item vertical-line">
+                <a href="#">首頁</a>
+              </li>
+              <li class="list-inline-item vertical-line">
+                <a href="#">商品分類</a>
+              </li>
+              <li class="list-inline-item vertical-line">
+                <a href="#">最新上架</a>
+              </li>
+              <li class="list-inline-item vertical-line">
+                <a href="#">熱門商品</a>
+              </li>
+              <li class="list-inline-item vertical-line">
+                <a href="#">品牌新聞</a>
+              </li>
+              <li class="list-inline-item vertical-line"></li>
+            </ul>
+          </div>
+          <div class="col-2 text-right">
+            <a href="#"><i class="fas fa-user"></i> 註冊</a> /
+            <a href="#"><i class="fas fa-sign-in-alt"></i> 登陸</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="search-container">
+      <div class="search-box" id="searchBox">
+        <input
+          type="text"
+          class="search-input form-control"
+          placeholder="Search..."
+        />
+        <button class="search-btn btn btn-success" onclick="toggleSearchBox()">
+          Search
+        </button>
+      </div>
+    </div>
+    <div class="container mt-5 img-fluid">
+      <div class="row">
+        <div class="col-md-4">
+          <img
+            src="img/Apple iPhone 15 Pro Max.png"
+            alt="Apple iPhone 15 Pro"
+          />
+          <h1 class="text-danger text-center">TWD4300</h1>
+          <button class="text-center">加入購物車</button>
+        </div>
+
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-6">
+              <h2>Apple iPhone 15 Pro</h2>
+              <hr />
+
+              <p>商品編號：23127515</p>
+
+              <p>商品名稱：iPhone 15 Pro</p>
+
+              <p>商品描述：</p>
+              <ul>
+                <li>航太等級鈦金屬髮絲紋邊框</li>
+                <li>A17 Pro 晶片，繪圖處理效能顛覆極限</li>
+                <li>全新動作按鈕，快速直達你常用的功能</li>
+              </ul>
+
+              <p>產品特點：</p>
+              <ul>
+                <li>
+                  鈦金屬機身：iPhone 15 Pro 是首款採用航太等級鈦金屬設計的
+                  iPhone，重量輕盈、堅固耐用。
+                </li>
+                <li>
+                  A17 Pro 晶片：Apple GPU
+                  史上最重大的革新設計，繪圖處理效能大幅提升。
+                </li>
+                <li>
+                  全新相機系統：四合一像素感光元件、2
+                  倍望遠鏡頭、全新的光像引擎，讓你在任何光線條件下都能拍出精彩照片和影片。
+                </li>
+                <li>
+                  ProRes 影片：全新的 Log 編碼和對學院色彩編碼系統 (ACES)
+                  的支援，讓你在後期製作時擁有更大的靈活性。
+                </li>
+                <li>動作按鈕：可自訂功能，快速存取常用功能。</li>
+                <li>
+                  USB-C 連接器：支援 USB 3.5
+                  傳輸協議，傳輸速度更快，並可連接更多裝置。
+                </li>
+                <li>車禍偵測功能：在發生嚴重車禍時，可自動撥打求救電話。</li>
+              </ul>
+
+              <p>電池續航力：可提供滿足一天所需的電池續航力。</p>
+              <p>其他注意事項：</p>
+              <ul>
+                <li>iPhone 15 Pro 不隨附電源轉接器或 EarPods。</li>
+                <li>NCC 型式認證號碼：CCAI235G0060T8</li>
+              </ul>
+              <div class="social-media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="col-6 productlist">
+              <h2>其他人還會喜歡</h2>
+              <hr />
+              <figure>
+                <img src="img/Apple iPhone 15 (128G).png" alt="" />
+                <figcaption class="text-center">
+                  Apple iPhone 15 (128G)
+                </figcaption>
+              </figure>
+              <figure>
+                <img src="img/Apple iPhone 14 Plus (128G)-星光色.png" alt="" />
+                <figcaption class="text-center">
+                  Apple iPhone 14 Plus (128G)
+                </figcaption>
+              </figure>
+              <figure>
+                <img src="img/Apple iPhone 13 (128G).png" alt="" />
+                <figcaption class="text-center">
+                  Apple iPhone 13 (128G).webp
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-black text-white text-center py-3">
+      123@gmail.com<br />
+      1234-5678
+    </footer>
+  </body>
+</html>
